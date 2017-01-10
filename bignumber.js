@@ -54,12 +54,18 @@
     };
 
     var $prefferedLanguage = 'en';
+    var $fractionSize = 2;
 
     this.preferredLanguage = preferredLanguage;
+    this.fractionSize = fractionSize;
     this.$get = $get;
 
     function preferredLanguage(langKey) {
-      this.preferredLanguage = (langKey && NUMBER_SUFFICES[langKey]) ? langKey : 'en';
+      $prefferedLanguage = (langKey && NUMBER_SUFFICES[langKey]) ? langKey : 'en';
+    }
+
+    function fractionSize(fSize) {
+      $fractionSize = fSize;
     }
 
     function $get() {
@@ -71,8 +77,9 @@
         }
 
         if (!fractionSize && fractionSize !== 0 || fractionSize < 0) {
-          fractionSize = 1;
+          fractionSize = $fractionSize;
         }
+
         if (!lang || !NUMBER_SUFFICES[lang]) {
           lang = $prefferedLanguage;
         }
