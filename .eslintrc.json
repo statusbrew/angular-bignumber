@@ -1,0 +1,29 @@
+{
+  "extends": "eslint:recommended",
+  "installedESLint": true,
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
+
+  "env": {
+    "browser": true
+  },
+
+  "globals": {
+    "require": true,
+    "define": true,
+    "module": true,
+    "angular": true,
+    "DEBUG": true,
+    "jasmine": true
+  },
+  "parser": "babel-eslint",
+
+  "rules": {
+    // FIXME
+    "no-unused-vars": ["error", {
+      "vars": "local",
+      "args": "none"
+    }]
+  }
+}

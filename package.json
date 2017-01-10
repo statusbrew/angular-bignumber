@@ -1,0 +1,22 @@
+{
+  "name": "angular-bignumber",
+  "version": "0.0.1",
+  "main": "bignumber.js",
+  "scripts": {
+    "test": "./node_modules/.bin/karma test"
+  },
+  "authors": [
+    "Karan Bali <karan_bali@statusbrew.com>"
+  ],
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.3.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-requirejs": "^1.1.0",
+    "requirejs": "^2.3.2"
+  },
+  "description": "Converting large numbers into abbreviated strings"
+}

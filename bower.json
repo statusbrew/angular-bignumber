@@ -1,0 +1,22 @@
+{
+  "name": "angular-bignumber",
+  "version": "0.0.1",
+  "main": "bignumber.js",
+  "authors": [
+    "Karan Bali <karan_bali@statusbrew.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "^1.6.1",
+    "angular-mocks": "^1.6.1"
+  },
+  "description": "Converting large numbers into abbreviated strings"
+}
