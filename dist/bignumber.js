@@ -10,6 +10,8 @@
   }
 }(this, function(angular) {
 
+  bignumberFilter.$inject = ['bignumber'];
+
   return angular.module('ngBignumber', [])
     .provider('bignumber', bignumberProvider)
     .filter('bignumber', bignumberFilter)
