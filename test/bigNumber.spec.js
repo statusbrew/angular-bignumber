@@ -1,7 +1,7 @@
 describe('bignumber', function() {
   //var params;
 
-  beforeEach(module('bignumber', function(bignumberProvider) {
+  beforeEach(module('ngBignumber', function(bignumberProvider) {
     //bignumber.configure(1);
   }));
 
