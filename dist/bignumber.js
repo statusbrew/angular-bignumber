@@ -89,8 +89,9 @@
         var isNegative = number < 0;
 
         var langDef = NUMBER_SUFFICES[lang];
-
-        var pow = Math.round(Math.log(number) / Math.log(10));
+        // Giving 1000 or edge cases will give something like 2.999 instead of 3 which will result in unexpected behaviour
+        // Adding round for that
+        var pow = Math.round(Math.round(Math.log(number) / Math.log(10)));
 
         if (pow >= 3) {
           // Map power to possible smallest mapping symbol for that language.
