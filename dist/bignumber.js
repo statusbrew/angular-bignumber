@@ -79,7 +79,6 @@
         if (!fractionSize && fractionSize !== 0 || fractionSize < 0) {
           fractionSize = $fractionSize;
         }
-
         if (!lang || !NUMBER_SUFFICES[lang]) {
           lang = $prefferedLanguage;
         }
@@ -102,9 +101,14 @@
 
             var symbol;
             var fractionAbs;
+
             // IF NOT the last item in object
             if (langDefJ) {
-              if (pow < langDefJ.pow) {
+              if (pow.toFixed(2) == langDefJ.pow) {
+                symbol = langDefJ.val;
+                fractionAbs = (abs / Math.pow(10, langDefJ.pow)).toFixed(fractionSize);
+                return (isNegative ? '-' : '') + fractionAbs + symbol;
+              } else if (pow < langDefJ.pow) {
                 symbol = langDefI.val;
                 fractionAbs = (abs / Math.pow(10, langDefI.pow)).toFixed(fractionSize);
                 return (isNegative ? '-' : '') + fractionAbs + symbol;
