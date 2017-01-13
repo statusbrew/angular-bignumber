@@ -89,7 +89,7 @@
 
         var langDef = NUMBER_SUFFICES[lang];
 
-        var pow = Math.log(number) / Math.log(10);
+        var pow = Math.log(abs) / Math.log(10);
 
         if (pow >= 3) {
           // Map power to possible smallest mapping symbol for that language.
