@@ -79,7 +79,6 @@
         if (!fractionSize && fractionSize !== 0 || fractionSize < 0) {
           fractionSize = $fractionSize;
         }
-
         if (!lang || !NUMBER_SUFFICES[lang]) {
           lang = $prefferedLanguage;
         }
@@ -90,7 +89,7 @@
 
         var langDef = NUMBER_SUFFICES[lang];
 
-        var pow = Math.log(number) / Math.log(10);
+        var pow = Math.log(abs) / Math.log(10);
 
         if (pow >= 3) {
           // Map power to possible smallest mapping symbol for that language.
@@ -102,9 +101,14 @@
 
             var symbol;
             var fractionAbs;
+
             // IF NOT the last item in object
             if (langDefJ) {
-              if (pow < langDefJ.pow) {
+              if (pow.toFixed(2) == langDefJ.pow) {
+                symbol = langDefJ.val;
+                fractionAbs = (abs / Math.pow(10, langDefJ.pow)).toFixed(fractionSize);
+                return (isNegative ? '-' : '') + fractionAbs + symbol;
+              } else if (pow < langDefJ.pow) {
                 symbol = langDefI.val;
                 fractionAbs = (abs / Math.pow(10, langDefI.pow)).toFixed(fractionSize);
                 return (isNegative ? '-' : '') + fractionAbs + symbol;
